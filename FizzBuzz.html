@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <label>Type a number: </label>
+    <input type="text" id="number">
+    <button onclick="fb()">Click here</button>
+    <script> 
+        function fb(){
+            const i = document.getElementById('number').value;
+            console.log(i);
+            const output = document.createElement("p");
+            if (i === "0"){
+                output.innerHTML = 'invalid input';
+            }else{ 
+                if (i % 3 == 0) {
+                    output.innerHTML = "Fizz";
+            } else if (i % 5 == 0){
+                output.innerHTML = "Buzz";
+            } else if (i % 3 === 0 && i % 5 == 0){
+                output.innerHTML = "FizzBuzz";
+            } else{
+                output.innerHTML = i;
+            }}
+            document.body.appendChild(output);
+        }
+        const main = document.getElementById('demo');
+        main.innerHTML = "Get a FizzBuzz Result!";
+        
+
+    </script>
+</body>
+</html>
